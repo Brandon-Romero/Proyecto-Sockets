@@ -1,0 +1,27 @@
+package view;
+
+import javax.swing.BoxLayout;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+import java.awt.*;
+
+public class RegisterPanel extends JPanel{
+
+	private static final long serialVersionUID = 1L;
+	private JLabel JLClient;
+	
+	public RegisterPanel() {
+		this.setBackground(Color.LIGHT_GRAY);
+		this.setPreferredSize(400,400);
+		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+		this.initComponents();
+		this.setVisible(true);
+	}
+	
+	public void initComponents() {
+		JLClient = new JLabel();
+		this.add(Utilities.text(JLClient, Constants.GAME_FONT, Constants.OPTION_MENU_CONFIG_CLIENT, Color.BLACK));
+	}
+
+}

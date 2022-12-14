@@ -1,0 +1,25 @@
+package view;
+
+import java.awt.Color;
+import java.awt.FlowLayout;
+
+import javax.swing.BoxLayout;
+import javax.swing.JPanel;
+
+public class SouthPanel extends JPanel{
+
+	private static final long serialVersionUID = 1L;
+	private String description;
+
+	public SouthPanel() {
+		this.setBackground(Color.WHITE);
+		this.setLayout(new FlowLayout(FlowLayout.LEFT));
+		this.initComponents();
+		this.setVisible(true);
+	}
+	
+	public void initComponents() {
+		this.add(gamePanel);
+		this.add(registerPanel);
+	}
+}

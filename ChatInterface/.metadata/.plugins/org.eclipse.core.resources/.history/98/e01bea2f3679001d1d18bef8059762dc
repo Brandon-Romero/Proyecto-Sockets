@@ -1,0 +1,27 @@
+package view;
+
+import javax.swing.BoxLayout;
+import javax.swing.JPanel;
+
+public class CenterPanel extends JPanel {
+
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private RegisterPanel registerPanel;
+	
+	
+
+	public CenterPanel() {
+		registerPanel= new RegisterPanel();
+		this.setLayout(new BoxLayout(registerPanel, BoxLayout.X_AXIS));
+		this.initComponent();
+		this.setVisible(true);
+	}
+	
+	public void initComponent() {
+		this.add(registerPanel);
+	}
+}

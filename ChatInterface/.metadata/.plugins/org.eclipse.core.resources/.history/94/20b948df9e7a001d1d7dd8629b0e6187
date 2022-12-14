@@ -1,0 +1,22 @@
+package view;
+
+import java.awt.Color;
+import java.awt.Dimension;
+
+import javax.swing.JPanel;
+
+public class GamePanel extends JPanel {
+
+	private static final long serialVersionUID = 1L;
+	private JPanel gamePanel, buttonPanel;
+	
+	public GamePanel() {
+		gamePanel = new JPanel();
+		buttonPanel = new JPanel();
+		this.setBackground(Color.GRAY);
+		this.setPreferredSize(new Dimension(200,800));
+		this.setVisible(true);
+	}
+	
+	
+}

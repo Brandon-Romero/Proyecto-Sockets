@@ -1,0 +1,31 @@
+package control;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class Controller implements ActionListener {
+	
+	public Controller() {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		switch (Commands.valueOf(e.getActionCommand())) {
+		case C_CLIENT:
+			
+			break;
+		case C_SERVER:
+			
+			break;
+		case C_EXIT:
+			
+			break;
+
+		default:
+			break;
+		}
+		
+	}
+
+}

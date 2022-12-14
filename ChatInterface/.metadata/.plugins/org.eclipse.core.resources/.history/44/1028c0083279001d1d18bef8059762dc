@@ -1,0 +1,22 @@
+package view;
+
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import javax.swing.JPanel;
+import java.awt.*;
+
+
+public class NorthPanel extends JPanel {
+
+	private static final long serialVersionUID = 1L;
+	private JMenu config, help;
+	private JMenuItem client, server, exit;
+
+	public NorthPanel() {
+		this.setBackground(Color.WHITE);
+		this.setLayout(new FlowLayout());
+		this.setVisible(true);
+	}
+	
+	
+}

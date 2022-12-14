@@ -1,0 +1,23 @@
+package view;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.awt.*;
+
+public class JFramePrincipal extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+	
+	private JPanel jPanelPrincipal;
+	
+	public JFramePrincipal() {
+		jPanelPrincipal = new JPanel();
+	}
+	
+	public void initComponents() {
+		this.add(jPanelPrincipal);
+		jPanelPrincipal.setLayout(new BorderLayout());
+		jPanelPrincipal.setBackground(Color.BLUE);
+	}
+
+}

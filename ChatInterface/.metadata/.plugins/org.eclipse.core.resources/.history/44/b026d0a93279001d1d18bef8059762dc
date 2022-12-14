@@ -1,0 +1,31 @@
+package view;
+
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import javax.swing.JPanel;
+import java.awt.*;
+
+
+public class NorthPanel extends JPanel {
+
+	private static final long serialVersionUID = 1L;
+	private JMenu config, help;
+	private JMenuItem client, server, exit;
+
+	public NorthPanel() {
+		this.setBackground(Color.WHITE);
+		this.setLayout(new FlowLayout(FlowLayout.LEFT));
+		this.initComponents();
+		this.setVisible(true);
+	}
+	
+	public void initComponents() {
+		config = new JMenu(Constants.OPTION_BARR_MENU_CONFIG);
+		
+		help = new JMenu(Constants.OPTION_BARR_MENU_HELP);
+		this.add(config);
+		this.add(help);
+	}
+	
+	
+}

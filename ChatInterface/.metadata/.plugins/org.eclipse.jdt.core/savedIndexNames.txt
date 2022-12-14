@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+C:\Users\ACER_COREI5\Desktop\2022-2\ChatInterface\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+2132342881.index
+2117287813.index

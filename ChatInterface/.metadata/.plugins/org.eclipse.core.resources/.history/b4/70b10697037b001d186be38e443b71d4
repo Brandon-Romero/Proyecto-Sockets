@@ -1,0 +1,51 @@
+package view;
+
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import javax.swing.JPanel;
+import java.awt.*;
+
+
+public class MenuBarr extends JPanel {
+
+	private static final long serialVersionUID = 1L;
+	private JMenu config, help;
+	private JMenuItem client, server, exit;
+
+	public MenuBarr() {
+		this.setBackground(Color.WHITE);
+		this.setLayout(new FlowLayout(FlowLayout.LEFT));
+		this.initComponents();
+		this.setVisible(true);
+	}
+	
+	public void initComponents() {
+		config = new JMenu(Constants.OPTION_BARR_MENU_CONFIG);
+		
+		client = new JMenuItem(Constants.OPTION_MENU_CONFIG_CLIENT);
+		//client.addActionListener(actionListener);
+		//client.setActionCommand(Commands.C_REPORT_BY_EXIT_STATE.toString());
+		config.add(client);
+		config.addSeparator();
+		
+		server = new JMenuItem(Constants.OPTION_MENU_CONFIG_SERVER);
+		//server.addActionListener(actionListener);
+		//server.setActionCommand(Commands.C_REPORT_BY_EXIT_STATE.toString());
+		config.add(server);
+		config.addSeparator();
+		
+		exit = new JMenuItem(Constants.OPTION_MENU_CONFIG_EXIT);
+		//exit.addActionListener(actionListener);
+		//exit.setActionCommand(Commands.C_REPORT_BY_EXIT_STATE.toString());
+		config.add(exit);
+		config.addSeparator();
+		
+		help = new JMenu(Constants.OPTION_BARR_MENU_HELP);
+		
+		this.add(config);
+		this.add(help);
+		
+	}
+	
+	
+}
