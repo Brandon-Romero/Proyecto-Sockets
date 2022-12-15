@@ -25,7 +25,7 @@ public class Controller implements ActionListener {
 	private Client client;
 	private IGame data;
 	private GamePanel gamePanel;
-	// private PresenterImpI presenterImpI;//
+	//private PresenterImpI presenterImpI;//
 	private Threads gameThread;
 	String optionSelected = "";
 	private JFrameColor JFColor;
@@ -36,7 +36,7 @@ public class Controller implements ActionListener {
 		jFramePrincipal = new JFramePrincipal(this, data);
 		server = new Server();
 		client = new Client();
-		// presenterImpI = new PresenterImpI();///
+		//presenterImpI = new PresenterImpI();
 		gameThread = new Threads(jFramePrincipal);
 		initialFigures();
 		jFramePrincipal.setVisible(true);
@@ -64,7 +64,7 @@ public class Controller implements ActionListener {
 
 			case C_SERVER:
 				optionSelected = "C_SERVER";
-				server.runnerConnectionThreads(5050);///////
+				server.runnerConnectionThreads(5050);
 				// jFramePrincipal.visibilityDialogServer(true);
 
 				break;

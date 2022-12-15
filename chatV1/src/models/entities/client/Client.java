@@ -82,7 +82,6 @@ public class Client implements IGame {
         String st = "";
         try {
             do {
-                System.out.println("1111");
                 st = (String) bufferDeEntrada.readUTF();
                 showText("\n[Servidor] => " + st);
                 System.out.print("\n[Cliente] => ");
