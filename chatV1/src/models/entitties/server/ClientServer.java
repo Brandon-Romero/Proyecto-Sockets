@@ -18,6 +18,10 @@ public class ClientServer extends Thread{
 		this.socket = socket2;
 	}
 
+	public String getSocketIp() {
+		return socket.getInetAddress().getHostName();
+		
+	}
 	public void flujos() {
 		try {
 			bufferDeEntrada = new DataInputStream(socket.getInputStream());
