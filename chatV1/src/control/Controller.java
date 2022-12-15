@@ -64,7 +64,7 @@ public class Controller implements ActionListener {
 
 			case C_SERVER:
 				optionSelected = "C_SERVER";
-				server.runnerConnectionThreads(5050);
+				server.start();
 				// jFramePrincipal.visibilityDialogServer(true);
 
 				break;
@@ -76,7 +76,7 @@ public class Controller implements ActionListener {
 			case C_RUN_SERVER:
 				// rescatar datos
 
-				server.runnerConnectionThreads(5050);
+				//server.runnerConnectionThreads(5050);
 				optionSelected = "C_RUN_SERVER";
 
 				jFramePrincipal.visibilityDialogServer(false);

@@ -7,10 +7,12 @@ import java.util.Scanner;
 
 import models.IGame;
 
-public class Server implements IGame {
+public class Server extends Thread implements IGame {
 
 	private Socket socket;
+	private int port =5050;
 	private ArrayList<Thread> threadClient;
+	private ArrayList<Socket> clients;
 	private ServerSocket serverSocket;
 	private DataInputStream bufferDeEntrada = null;
 	private DataOutputStream bufferDeSalida = null;
@@ -20,9 +22,10 @@ public class Server implements IGame {
 
 	public void Sever() {
 		this.threadClient = new ArrayList<Thread>();
+		this.clients = new ArrayList<Socket>();
 	}
 
-	public void upConnection(int port) {
+	public void upConnection() {
 		try {
 			serverSocket = new ServerSocket(port);
 			showText("Esperando conexi�n entrante en el puerto " + String.valueOf(port) + "...");
@@ -57,6 +60,11 @@ public class Server implements IGame {
 		}
 	}
 
+	public void sedEspicificClient() {
+		for (Socket socket : clients) {
+			
+		}
+	}
 	public void send(String s) {
 		try {
 			bufferDeSalida.writeUTF(s);
@@ -90,11 +98,16 @@ public class Server implements IGame {
 
 		}
 	}
+	
+	@Override
+	public void run() {
+		runnerConnectionThreads();
+	}
 
-	public void runnerConnectionThreads(int port) {
+	public void runnerConnectionThreads() {
 		while (true) {
 			try {
-				upConnection(port);
+				upConnection();
 				acceptClient();
 				flujos();
 				catchDatas();
@@ -125,11 +138,11 @@ public class Server implements IGame {
 
 	@Override
 	public String getIp() throws UnknownHostException {
-		// InetAddress address = InetAddress.getLocalHost().get;
 		InetAddress ip = InetAddress.getLocalHost();
 		return ip.getHostAddress();
 	}
 
+	/*
 	public static void main(String[] args) {
 		Server s = new Server();
 		Scanner sc = new Scanner(System.in);
@@ -141,6 +154,8 @@ public class Server implements IGame {
 		s.runnerConnectionThreads(Integer.parseInt(port));
 
 	}
+	
+	*/
 
 	@Override
 	public String getTittLeClient() {
