@@ -7,8 +7,7 @@ import java.util.Scanner;
 
 import models.IGame;
 
-
-public class Server implements IGame{
+public class Server implements IGame {
 
 	private Socket socket;
 	private ArrayList<Thread> threadClient;
@@ -17,7 +16,8 @@ public class Server implements IGame{
 	private DataOutputStream bufferDeSalida = null;
 	Scanner escaner = new Scanner(System.in);
 	final String COMANDO_TERMINACION = "salir";
-	
+	private String optionFrame = "SERVER";
+
 	public void Sever() {
 		this.threadClient = new ArrayList<Thread>();
 	}
@@ -27,7 +27,7 @@ public class Server implements IGame{
 			serverSocket = new ServerSocket(port);
 			showText("Esperando conexi�n entrante en el puerto " + String.valueOf(port) + "...");
 			acceptClient();
-			
+
 		} catch (Exception e) {
 			showText("Error en levantarConexion(): " + e.getMessage());
 			System.exit(0);
@@ -90,7 +90,7 @@ public class Server implements IGame{
 
 		}
 	}
-	
+
 	public void runnerConnectionThreads(int port) {
 		while (true) {
 			try {
@@ -98,12 +98,12 @@ public class Server implements IGame{
 				acceptClient();
 				flujos();
 				catchDatas();
-			} finally { 
+			} finally {
 				closeConnection();
 			}
 		}
 	}
-	
+
 	public void acceptClient() {
 		while (true) {
 			try {
@@ -122,22 +122,34 @@ public class Server implements IGame{
 		ClientServer clientServer = new ClientServer(socket2);
 		clientServer.start();
 	}
-	
+
+	@Override
+	public String getIp() throws UnknownHostException {
+		// InetAddress address = InetAddress.getLocalHost().get;
+		InetAddress ip = InetAddress.getLocalHost();
+		return ip.getHostAddress();
+	}
+
 	public static void main(String[] args) {
 		Server s = new Server();
 		Scanner sc = new Scanner(System.in);
-		
+
 		showText("Ingresa el puerto [5050 por defecto]: ");
 		String port = sc.nextLine();
 		if (port.length() <= 0)
 			port = "5050";
 		s.runnerConnectionThreads(Integer.parseInt(port));
-		
+
 	}
 
 	@Override
-	public String getIp() {
-		String ip = socket.getInetAddress().getHostName();
-		return ip;
+	public String getTittLeClient() {
+		return null;
 	}
+
+	@Override
+	public String getTittLeServer() {
+		return optionFrame;
+	}
+
 }

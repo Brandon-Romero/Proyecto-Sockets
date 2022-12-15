@@ -106,18 +106,16 @@ public class Utilities {
 		return button;
 	}
 
-	public static Component textField(JTextField cTextField, Font font, String text, Color color, int width,
-			int height) {
-		Dimension sizeTextField = new Dimension();
-		sizeTextField.setSize(width, height);
+	public static Component textField(JTextField cTextField, Font font, String text, Color color, Dimension dimension) {
 		cTextField.setForeground(color);
 		cTextField.setFont(font);
 		cTextField.setText(text);
-		cTextField.setPreferredSize(sizeTextField);
+		cTextField.setMinimumSize(dimension);
 		return cTextField;
 	}
 
-	public static Component comboBox(JComboBox<String> correctOption, ArrayList<String> options, int width, int height) {
+	public static Component comboBox(JComboBox<String> correctOption, ArrayList<String> options, int width,
+			int height) {
 		Dimension sizeComboBox = new Dimension();
 		sizeComboBox.setSize(width, height);
 		for (int i = 0; i < options.size(); i++) {
@@ -135,7 +133,7 @@ public class Utilities {
 		check.setSelected(selected);
 		return check;
 	}
-	
+
 	public static Component textArea(JTextArea areaText, Dimension dimension) {
 		areaText.setPreferredSize(dimension);
 		return areaText;
